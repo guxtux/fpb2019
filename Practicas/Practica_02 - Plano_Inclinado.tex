@@ -1,0 +1,72 @@
+\input{../Preambulos/pre_documento}
+\title{Práctica 1 - Plano inclinado \\ \begin{Large}Curso de Física 2019-2\end{Large}}
+%\author{M. en C. Gustavo Contreras Mayén.}
+\setlength{\voffset}{-1cm}
+\begin{document}
+\maketitle
+\vspace*{-3cm} 
+\fontsize{14}{14}\selectfont
+\section{Objetivos:}
+\begin{enumerate}
+\item Determinar la relación entre la distancia y el tiempo de un móvil que se desliza sobre un plano inclinado.
+\item Estimar el valor de la constante de gravedad \texttt{g}.
+\end{enumerate}
+\section{Conocimientos necesarios y referencias.}
+\begin{multicols}{2}
+%\setlength{\parindent}{0pt}
+\begin{enumerate}[label=\roman*.]
+\itemsep-1em 
+\item  Leyes de Newton. \\
+\item Plano inclinado. \\
+\item  Diagrama de cuerpo libre. \\
+\item  Coeficientes de fricción. \\
+\item  Ajuste de datos experimentales.
+\end{enumerate}
+\end{multicols}
+\section{Material.}
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*.]
+\itemsep0em 
+\item Riel recto.
+\item Balín.
+\item Cronómetro.
+\item Masking tape.
+\item Regla.
+\end{enumerate}
+\end{multicols}
+\section{Procedimiento experimental.}
+\begin{enumerate}
+\item En caso de que el riel no cuente con una escala de medición, usa el masking tape para marcar unidades de distancia cada $10$ cm a lo largo de la longitud $L$ del mismo.
+\item Levanta el riel una distancia $H_{1}$, de la siguiente forma:
+\begin{figure}[H]
+	\centering
+	\includestandalone{../Figuras/Practica01_01}
+	\caption{Disposición del riel con una inclinación.}
+\end{figure}
+\item Deben de registrar el tiempo que tarda el balín en recorrer cada uno de los intervalos de distancia, para ello es necesario que coloques el balín al inicio del riel y lo sueltes, \textbf{\emph{no deben de empujar el balín}}.
+\item Para tener un buen estimado del tiempo registrado en cada marca de distancia, es necesario repetir la medición de tiempo en 5 ocasiones. Puedes usar el siguiente formato de registro de datos:
+\begin{center}
+\captionof{table}{Valores de distancia y tiempo para una altura $H_{1}$.}
+\begin{tabular}{| c | c *{5} {| C{1cm} } |}
+\hline
+Marca & Distancia (cm $\pm$ cm) & $t_{1}$ & $t_{2}$ & $t_{3}$ & $t_{4}$ & $t_{5}$ \\ \hline
+1 & & & & & & \\ \hline
+2 & & & & & &  \\ \hline
+3 & & & & & &  \\ \hline
+\vdots & & & & & &  \\ \hline
+\end{tabular}
+\end{center}
+\item Repite el registro de tiempo de recorrido del balín, modificando en dos ocasiones más el valor de la altura $H$, por lo que tendrás dos tablas más, para $H_{2}$ y $H_{3}$.
+\end{enumerate}
+\section{Análisis experimental.}
+\begin{enumerate}
+\item Calcula el promedio de tiempo de recorrido del balín para cada uno de los intervalos de distancia y para cada altura: $H_{1}$, $H_{2}$ y $H_{3}$.
+\item Grafica sobre papel, la distancia recorrida contra tiempo promedio en cada uno de los puntos experimentales que registraste, recuerda que también cada uno de ellos debe tener su barra de error.
+\item ¿Qué tipo de relación hay entre la distancia recorrida y el tiempo transcurrido?
+\item Ajusta la mejor recta a los datos experimentales, argumenta el procedimiento que vas a seguir.
+\item ¿Qué tipo de relación hay entre la velocidad del móvil y el ángulo $\theta$ del plano inclinado?
+\item De acuerdo a la respuesta del punto anterior, ¿qué ocurriría cuando $\theta = \pi/2$?
+\item Con la información disponible, estima el valor de la aceleración debida a la gravedad: $g$.
+\end{enumerate}
+\small{Material elaborado por: M. en C. Gustavo Contreras Mayén. \\ \hspace*{4cm} M. en C. Abraham Lima Buendía.}
+\end{document}

@@ -1,0 +1,15 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{positioning, shapes.geometric, arrows}
+\usepackage[T1]{fontenc}
+\renewcommand*\familydefault{\ttdefault} %% Only if the base font of the document is to be typewriter style
+\begin{document}
+\begin{tikzpicture}
+	\draw (0, 0) -- (6, 0) -- (0, 3) -- cycle;
+	\draw (-0.5, 1.5) node {$H_{1}$};
+	\draw (3, 2) node {$L$};
+	\draw (5, 0) arc (180:150:0.9);
+	\draw (4.6, 0.3) node {$\theta$};
+\end{tikzpicture}
+\end{document}
