@@ -1,0 +1,104 @@
+\documentclass[12pt]{article}
+\usepackage{termcal}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[letterpaper]{geometry}
+\geometry{top=1.5cm, bottom=1.5cm, left=2cm, right=2cm}
+
+\usepackage{etoolbox}
+\patchcmd{\endcalendar}{[l]}{[c]}{}{}
+
+\usepackage{xcolor}
+
+\renewcommand{\calprintclass}{}
+\renewcommand{\calprintdate}{%
+     \ifnewmonth\framebox{\arabic{month}/\arabic{date}}%
+     \else\arabic{date}%
+     \fi}
+\definecolor{ao}{rgb}{0.0, 0.5, 0.0}
+\definecolor{arsenic}{rgb}{0.23, 0.27, 0.29}
+\definecolor{awesome}{rgb}{1.0, 0.13, 0.32}
+\definecolor{blush}{rgb}{0.87, 0.36, 0.51}
+\definecolor{burgundy}{rgb}{0.5, 0.0, 0.13}
+\definecolor{capri}{rgb}{0.0, 0.75, 1.0}
+\definecolor{cinnabar}{rgb}{0.89, 0.26, 0.2}
+\definecolor{cocoabrown}{rgb}{0.82, 0.41, 0.12}
+\definecolor{coolblack}{rgb}{0.0, 0.18, 0.39}
+\definecolor{darkcyan}{rgb}{0.0, 0.55, 0.55}
+\definecolor{darktangerine}{rgb}{1.0, 0.66, 0.07}
+\definecolor{darkolivegreen}{rgb}{0.33, 0.42, 0.18}
+
+\author{M. en C. Gustavo Contreras Mayén. \texttt{curso.fisica.comp@gmail.com}\\
+M. en C. Abraham Lima Buendía. \texttt{abraham3081@ciencias.unam.mx}}
+\title{Curso de Física \\ \large{Semestre 2019-1}}
+\begin{document}
+\date{}
+\maketitle
+\hspace{2cm}
+\begin{calendar}{8/6/18}{18}
+\setlength{\calboxdepth}{0.5in}
+\setlength{\calwidth}{6in}
+% Description of the Week.
+%\calday[Monday]{\classday}     % Monday
+\skipday                       % Tuesday  (no class)
+\calday[Martes]{\classday}    % Wednesday
+\skipday
+%\calday[Jueves]{\noclassday} % Thursday (unnumbered)
+\skipday
+\calday[Viernes]{\classday}     % Friday
+\skipday\skipday               % weekend  (no class)
+
+%Temas del curso
+\caltext{8/7/18}{\begin{enumerate}
+\itemsep0em
+\item Presentación del curso de Física.
+\item Entrega de syllabus.
+\item Examen diagnóstico.
+\end{enumerate}}
+
+%Clase de repaso
+\caltext{8/10/18}{\textbf{Clase de repaso:} \\ \color{blue}{Sist. ecs. lineales. \\ Ecs. cuadráticas. \\ Plano y funciones. \\ Vectores.}}
+
+%Inicia Tema 1
+\caltext{8/14/18}{\textbf{Tema 1. Conceptos básicos.} \\ \color{blue}{¿Qué estudia la física? \\ Medición e incertidumbre. \\ Cinemática.}}
+\caltext{8/17/18}{\textbf{Tema 1. Conceptos básicos.} \\ \color{blue}{Dinámica: Leyes de Newton} \\ \textcolor{darkcyan}{\textbf{Práctica 0: Mediciones e incertidumbre.}}}
+\caltext{8/21/18}{\textbf{Tema 1. Conceptos básicos.} \\ \color{blue}{Trabajo y energía \\Gravitación.}}
+\caltext{8/24/18}{Sesión de dudas del Tema 1 (20 minutos) \\ \textcolor{darkcyan}{\textbf{Práctica 1: Plano inclinado.}}}
+
+%Inicia Tema 2
+\caltext{8/28/18}{\textbf{Tema 2 . Electricidad y magnetismo.} \\ \color{awesome}{Campo y potencial eléctrico.}}
+\caltext{8/31/18}{\textbf{Tema 2 . Electricidad y magnetismo.} \\ \color{awesome}{Conductores y aislantes.} \\ \fcolorbox{red}{yellow}{\textbf{Primer examen parcial (2 horas)}}}
+\caltext{9/4/18}{\textbf{Tema 2 . Electricidad y magnetismo.} \\ \color{awesome}{Corrientes y ley de Ohm. \\ Circuitos eléctricos.}}
+\caltext{9/7/18}{\textbf{Tema 2 . Electricidad y magnetismo.} \\ \color{awesome}{Inducción electromagnética.} \\ \textcolor{darkcyan}{\textbf{Práctica 2. Electroscopio y uso de medidores eléctricos.}}}
+\caltext{9/11/18}{\textbf{Tema 2 . Electricidad y magnetismo.} \\ \color{awesome}{Ley de Ampere. \\ Ley de inducción de Faraday.}}
+\caltext{9/14/18}{\textbf{Tema 2 . Electricidad y magnetismo.} \\ \color{awesome}{Ondas electromagnéticas.} \\ \textcolor{darkcyan}{\textbf{Práctica 3. Pilas biológicas.}}}
+\caltext{9/18/18}{\textbf{Tema 2 . Electricidad y magnetismo.} \\ \color{awesome}{Electrofisiología \\ Potencial de acción.}}
+
+%Inicia Tema 3
+\caltext{9/21/18}{\textbf{Tema 3 . Óptica.} \\ \color{cocoabrown}{Límites de la óptica geométrica. \\ Leyes de reflexión y refracción.}}
+\caltext{9/25/18}{\textbf{Tema 3 . Óptica.} \\ \color{cocoabrown}{Formación de imágenes en el ojo. \\ \fcolorbox{red}{yellow}{\textbf{Segundo examen parcial (2 horas)}}}}
+\caltext{9/28/18}{\textbf{Tema 3 . Óptica.} \\ \color{cocoabrown}{Lentes delgadas.}}
+\caltext{10/2/18}{\textbf{Tema 3 . Óptica.} \\ \color{cocoabrown}{Micropscopio y telescopio.}}
+\caltext{10/5/18}{\textbf{Tema 3 . Óptica.} \\ \textcolor{darkcyan}{\textbf{Práctica 4. Óptica geométrica: caracterización de lentes.}}}
+\caltext{10/9/18}{\textbf{Tema 3 . Óptica.} \\ \color{cocoabrown}{Difracción e interferencia.}}
+\caltext{10/12/18}{\textbf{Tema 3 . Óptica.} \\ \textcolor{darkcyan}{\textbf{Práctica 5. Microscopio y telescopio.}}}
+\caltext{10/16/18}{\textbf{Tema 3 . Óptica.} \\ {\color{cocoabrown}{Espectroscopía.}} \\ \textbf{Tema 4. Estructura de la materia.} \\ \color{darkolivegreen}{Modelo de Bohr. \\ Átomo de hidrógeno.}}
+\caltext{10/19/18}{\textbf{Tema 4. Estructura de la materia.} \\ \color{darkolivegreen}{Teoría cinética de los gases.} \\ \fcolorbox{red}{yellow}{\textbf{Tercer examen parcial (2 horas)}}}
+\caltext{10/23/18}{\textbf{Tema 4. Estructura de la materia.} \\ \color{darkolivegreen}{Tabla periódica. \\ Peso y número atómico. \\ Valencia. \\ Introducción a las moleculas.}}
+\caltext{10/26/18}{\textbf{Tema 4. Estructura de la materia.} \\ \color{darkolivegreen}{Enlaces químcos. \\ Formación de moléculas.}}
+\caltext{10/30/18}{\textbf{Tema 4. Estructura de la materia.} \\ \color{darkolivegreen}{Molécula. \\ Peso molecular. \\ Número de Avogrado.}}
+\caltext{11/2/18}{\textcolor{burgundy}{\textbf{Día de muertos. Día Feriado.}}}
+\caltext{11/6/18}{\textbf{Tema 4. Estructura de la materia.} \\ \color{darkolivegreen}{Radiación de cuerpo negro.}}
+\caltext{11/9/18}{\textbf{Tema 4. Estructura de la materia.} \\ \color{darkolivegreen}{El núcleo e isótopos. \\ Modelos de Chadwick y Rutherford.}}
+\caltext{11/13/18}{\textbf{Tema 4. Estructura de la materia.} \\ \color{darkolivegreen}{Teoría de la radicación. \\ Efectos biológicos de la radiación.}}
+\caltext{11/16/18}{\textbf{Tema 4. Estructura de la material.} \\ \textcolor{darkcyan}{\textbf{Práctica 6. Pendiente por definir.}}}
+\caltext{11/20/18}{\textbf{Tema 4. Estructura de la materia.} \\ \color{darkolivegreen}{Biofísica molecular.}}
+\caltext{11/23/18}{\fcolorbox{red}{yellow}{\textbf{Cuarto examen parcial.}}}
+
+\caltext{11/27/18}{\color{darkcyan}{\textbf{Primera Semana de Finales}}}
+\caltext{11/30/18}{\color{darkcyan}{\textbf{Primera Semana de Finales}}}
+\caltext{12/4/18}{\color{darkcyan}{\textbf{Segunda Semana de Finales}}}
+\caltext{12/7/18}{\color{darkcyan}{\textbf{Segunda Semana de Finales}}}
+
+\end{calendar}
+\end{document}
