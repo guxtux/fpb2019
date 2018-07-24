@@ -1553,3 +1553,9 @@ body {
 
 .zoomed .reveal .roll span:after {
   visibility: hidden; }
+
+html.dimbg .slide-background {
+  opacity: 0.5 !important; }
+
+html.dimbg2 .slide-background {
+  opacity: 0.6 !important; }
