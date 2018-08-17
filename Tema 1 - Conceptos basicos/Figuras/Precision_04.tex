@@ -1,0 +1,13 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}
+	\foreach \x in {1, 2, 3}
+		\draw [color=red] (0, 0) circle (\x);
+	\draw [color=red, fill] (0, 0) circle (0.2);
+	\draw [fill] (-0.1, -0.1) circle (0.1);
+	\draw [fill] (0.1, 0.1) circle (0.1);
+	\draw [fill] (0, 0.1) circle (0.1);
+	\draw [fill] (0, -0.1) circle (0.1);
+\end{tikzpicture}
+\end{document}

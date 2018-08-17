@@ -1,0 +1,350 @@
+\input{../Preambulos/pre_beamer}
+\input{../Preambulos/pre_plantilla_Warsaw_default}
+%\input{../Preambulos/pre_codigo}
+\input{../Preambulos/pre_define_footers_Warsaw_default}
+\title{\large{Incertidumbre y mediciones}}
+\subtitle{Curso de Física}
+\author[]{M. en C. Gustavo Contreras Mayén}
+\date{\today}
+\institute{Facultad de Ciencias - UNAM}
+\titlegraphic{\includegraphics[width=2cm]{../Imagenes/escudo-facultad-ciencias}\hspace*{4.75cm}~%
+   \includegraphics[width=2cm]{../Imagenes/escudo-unam}
+}
+\begin{document}
+\maketitle
+\section*{Contenido}
+\frame[allowframebreaks]{\tableofcontents[currentsection, hideallsubsections]}
+\fontsize{14}{14}\selectfont
+\spanishdecimal{.}
+\section{Incertidumbre}
+\frame{\tableofcontents[currentsection, hideothersubsections]}
+\subsection{Fuentes de incertidumbre}
+\begin{frame}
+\frametitle{Fuentes de incertidumbre}
+Todas las mediciones tienen asociada una incertidumbre que puede deberse a los siguientes factores:
+\begin{itemize}[<+->]
+\item[\checkmark] la naturaleza de la magnitud que se mide.
+\item[\checkmark] el instrumento de medición.
+\item[\checkmark] el observador.
+\item[\checkmark] las condiciones externas.
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Factores de incertidumbre}
+Cada uno de estos factores constituye por separado una fuente de incertidumbre y contribuye en mayor o menor grado a la incertidumbre total de la medida.
+\\
+\bigskip
+\pause
+La tarea de detectar y evaluar las incertidumbres no es simple e implica conocer diversos aspectos de la medición.
+\end{frame}
+\subsection{Tipos de errores}
+\begin{frame}
+\frametitle{Tipos de errores}
+Se clasifican en dos grandes grupos:
+\setbeamercolor{item projected}{bg=red!70!black,fg=yellow}
+\setbeamertemplate{enumerate items}[circle]
+\begin{enumerate}[<+->]
+\item Errores aleatorios.
+\item Errores sistemáticos.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{Errores aleatorios}
+Se les llama errores \enquote{accidentales} o aleatorios a aquellos que aparecen cuando se realizan mediciones repetidas de la misma variable, se obtienen valores diferentes, con igual probabilidad de estar por arriba o por debajo del valor real.
+\end{frame}
+\begin{frame}
+\frametitle{Errores sistemáticos}
+Son aquellos errores sen donde se presenta una desviación constante de todas las medidas ya sea siempre hacia arriba o siempre hacia abajo del valor real, por ejemplo una mala calibración del instrumento de medición.
+\end{frame}
+\begin{frame}[plain]
+\frametitle{Medición precisa pero no exacta}
+\begin{figure}
+    \centering
+    \includestandalone{./Figuras/Precision_01}
+\end{figure}
+\end{frame}
+\begin{frame}[plain]
+\frametitle{Medición nada precisa y nada exacta}
+\begin{figure}
+    \centering
+    \includestandalone{./Figuras/Precision_02}
+\end{figure}
+\end{frame}
+\begin{frame}[plain]
+\frametitle{Medición precisa y exacta}
+\begin{figure}
+    \centering
+    \includestandalone{./Figuras/Precision_03}
+\end{figure}
+\end{frame}
+\begin{frame}[plain]
+\frametitle{Medición ideal}
+\begin{figure}
+    \centering
+    \includestandalone{./Figuras/Precision_04}
+    \caption{La medida ideal es aquella que tendría un $100\%$ de exactitud y un $100\%$ de precisión.}
+\end{figure}
+\end{frame}
+\section{Incertidumbre en medidas reproducibles}
+\frame{\tableofcontents[currentsection, hideothersubsections]}
+\subsection{Criterio para asignar}
+\begin{frame}
+\frametitle{Incertidumbre en medidas reproducibles}
+Cuando se realiza una serie de medidas de una misma magnitud con el mismo instrumento, se obtienen los mismos resultados, pero \textcolor{red}{no se puede concluir que la incertidumbre sea cero}.
+\\
+\bigskip
+\pause
+Lo que sucede es que los errores quedan ocultos ya que son menores que la incertidumbre asociada al aparato de medición.
+\end{frame}
+\begin{frame}
+\frametitle{Incertidumbre en medidas reproducibles}
+En este caso, puede establecerse un criterio simple y útil:
+\\
+\bigskip
+\pause
+\textit{cuando las medidas son reproducibles, se asigna una incertidumbre igual a la mitad de la división más pequeña del instrumento}, la cual se conoce como resolución.
+\end{frame}
+\begin{frame}
+\frametitle{Ejemplo}
+Al medir repetidas veces el volumen de un líquido con un instrumento graduado en mililitros, obtiene siempre $\SI{48.0}{\milli\liter}$, la incertidumbre será $\pm \SI{0.5}{\milli\liter}$.
+\\
+\bigskip
+\pause
+Lo que significa que la medición está entre $\SI{47.5}{\milli\liter}$ - $\SI{48.5}{\milli\liter}$, a éste se le conoce como intervalo de confianza de la medición y su tamaño es el doble de la incertidumbre.
+\end{frame}
+\section{Incertidumbre en medidas no reproducibles}
+\frame{\tableofcontents[currentsection, hideothersubsections]}
+\subsection{Incertidumbre asociada}
+\begin{frame}
+\frametitle{Incertidumbre en medidas no reproducibles}
+Cuando se hacen repeticiones de una medida en las mismas condiciones y éstas en general son diferentes, tomando en cuenta que la medida \enquote{real} no se conoce, surgen algunas preguntas interesantes:
+\setbeamercolor{item projected}{bg=red!70!black,fg=yellow}
+\setbeamertemplate{enumerate items}[circle]
+\begin{enumerate}[<+->]
+\item ¿Cuál es el valor que se reporta?
+\item ¿Cuál es el valor más probable?
+\item ¿Qué incertidumbre se asigna a ese valor?
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{Valor más probable}
+Se acepta que el valor más representativo es el promedio $(\bar{x})$ de las mediciones, que se calcula por
+\[ \bar{x} = \dfrac{x_{1} + x_{2} + \ldots + x_{n}}{n} \]
+donde $x_{1}, x_{2}, \ldots, x_{n}$ son las lecturas particulares y $n$ es el número de repeticiones.
+\end{frame}
+\begin{frame}
+\frametitle{La incertidumbre asociada}
+A reserva de hacer un estudio estadístico riguroso, utilizaremos un criterio muy sencillo.
+\\
+\bigskip
+Se debe de considerar la dispersión de los valores obtenidos y que en lo posible, el intervalo definido incluya el valor verdadero de la medición.
+\end{frame}
+\begin{frame}
+\frametitle{La incertidumbre asociada}
+Se considera como valor de incertidumbre la \textcolor{blue}{desviación absoluta máxima}.
+\\
+\bigskip
+\pause
+Que corresponde a la mayor de las diferencias absolutas entre el valor promedio y las lecturas obtenidas.
+\end{frame}
+\begin{frame}
+\frametitle{Ejemplo}
+Al medir el tiempo de vaciado del agua contenida en un embudo cuando se escurre por el fondo, después de repetir el experimento cinco veces en las mismas condiciones, se obtuvieron los siguiente datos:
+\end{frame}
+\begin{frame}
+\frametitle{Ejemplo}
+\begin{center}
+\begin{tabular}{c | c}
+Medición & Tiempo $(s)$ \\ \hline
+$t_{1}$ & $35.4$ \\ \hline
+$t_{2}$ & $30.2$ \\ \hline
+$t_{3}$ & $33.0$ \\ \hline
+$t_{4}$ & $29.6$ \\ \hline
+$t_{5}$ & $32.8$ \\ \hline
+\end{tabular}
+\end{center}
+\end{frame}
+\begin{frame}
+\frametitle{Ejemplo}
+El tiempo más probable $(\bar{t})$ es
+\[ \bar{t} = \dfrac{t_{1} + t_{2} + t_{3} + t_{4} + t_{5}}{5} = \SI{32.2}{\second} \]
+\pause
+Los valores extremos son: $\SI{35.4}{\second}$ (máximo) y $\SI{29.6}{\second}$ (mínimo). 
+\end{frame}
+\begin{frame}
+\frametitle{Ejemplo}
+Las diferencias absolutas con respecto al promedio son:
+\begin{align*}
+\vert 32.2 - 35.4 \vert &= 3.2 \\
+\vert 32.2 - 29.6 \vert &= 2.6 \\
+\end{align*}
+\pause
+La diferencia absoluta mayor corresponde a $3.2$, por lo que el resultado de las mediciones se reporta como
+\begin{empheq}[box={\mybluebox[5pt][5pt]}]{equation*}
+    t = 32.2 \pm 3.2 \mbox{ s}
+\end{empheq}
+\end{frame}
+\section*{Expresión de una medida}
+\subsection*{Regla para expresar una medida}
+\begin{frame}
+\frametitle{Regla para expresar una medida}
+Toda medida ya sea reproducible o no, debe de ir seguida por la unidad de la variable que se mide y se expresa de la forma
+\[ \bar{x} \pm \delta \: x \mbox{ unidades}\]
+\end{frame}
+\begin{frame}
+\frametitle{Regla para expresar una medida}
+Donde $\bar{x}$ representa el valor central de la medición y $\delta \: x$ representa su incertidumbre.
+\\
+\bigskip
+\pause
+De manera que se entienda que la medición está comprendida dentro del intervalo
+\[ [ \bar{x} - \delta \: x, \bar{x} + \delta \: x ] \]
+\end{frame}
+\section{Representación de la incertidumbre}
+\frame{\tableofcontents[currentsection, hideothersubsections]}
+\subsection{Incertidumbre relativa}
+\begin{frame}
+\frametitle{¿Qué es la incertidumbre relativa?}
+Utilizando una cinta métrica cuya mínima escala es $\SI{0.1}{\cm}$, se hacen las mediciones de
+\\
+\bigskip
+\begin{tabular}{l | l}
+\hline
+Ancho de una puerta & $a=\SI{150.0+-0.05}{\cm}$ \\ \hline
+Largo de un lápiz & $L=\SI{10.0+-0.05}{\cm}$ \\ \hline
+\end{tabular}
+\end{frame}
+\begin{frame}
+\frametitle{Discusión}
+\setbeamertemplate{itemize items}[square]
+\begin{itemize}[<+->]
+\item La incertidumbre absoluta ($\SI{0.05}{\cm}$) es la misma para las dos mediciones.
+\item Pero $\SI{0.05}{\cm}$ distribuidos a lo largo de $\SI{150.0}{\cm}$ es mucho menos que si se reparten sobre $\SI{10.0}{cm}$.
+\item La significancia de $\SI{0.05}{\cm}$ es mayor cuando se miden $\SI{10.0}{cm}$ que cuando se miden $\SI{150.0}{cm}$.
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Definición de incertidumbre relativa}
+Se define la incertidumbre relativa como el cociente entre la incertidumbre relativa y la magnitud observada:
+\[ \delta_{r} \: x = \dfrac{\delta \: x}{x_{0}} \]
+\end{frame}
+\begin{frame}
+\frametitle{Incertidumbre relativa}
+De los ejemplos anteriores:
+\\
+\bigskip
+Para la puerta se tiene
+\[ \delta_{r} \: a = \dfrac{\SI{0.05}{\cm}}{\SI{150.0}{\cm}} = 0.00033 \]
+Para el lápiz se tiene
+\[ \delta_{r} \: L = \dfrac{\SI{0.05}{\cm}}{\SI{10.0}{\cm}} = 0.0055 \]
+La incertidumbre relativa es una \emph{cantidad adimensional}.
+\end{frame}
+\subsection{Incertidumbre porcentual}
+\begin{frame}
+\frametitle{Magnitud del errores}
+Si se dice que una medición $x_{0}$ tiene una incertidumbre del $50\%$, nos podemos dar una idea de la magnitud del error, aún sin conocer la magnitud observada, lo mismo pasaría con un error del $5\%$.
+\end{frame}
+\begin{frame}
+\frametitle{Definición de incertidumbre porcentual}
+La incertidumbre porcentual es el índice más utilizado para especificar la precisión de una medida, se obtiene multiplicando la incertidumbre relativa por $100\%$:
+\[ \delta_{\%} \: x  = \delta_{r} \: x  \times 100 \% \]
+\end{frame}
+\begin{frame}
+\frametitle{De los ejemplos anteriores}
+Expresando la incertidumbre porcentual, ahora tenemos una idea de la magnitud del error asociado a la medición:
+\\
+\bigskip
+\begin{tabular}{l | l}
+\hline
+Puerta & $\delta_{\%} \: a = 0.00033 \times 100 \% = 0.033 \%$ \\ \hline
+Lápiz & $\delta_{\%} \: L = 0.0055 \times 100 \% = 0.55 \%$ \\ \hline
+\end{tabular}
+\end{frame}
+\section{Cifras significativas}
+\frame{\tableofcontents[currentsection, hideothersubsections]}
+\subsection{Definición}
+\begin{frame}
+\frametitle{Definición}
+En una medición, son cifras significativas todas aquellas que pueden leerse directamente del aparato de medición.
+\end{frame}
+\begin{frame}
+\frametitle{Importante}
+Al reportar medidas con el número correcto de cifras significativas, se indica implícitamente, la mínima escala del instrumento de medición.
+\end{frame}
+\begin{frame}
+\frametitle{Ejemplo de medición}
+Se mide con un vernier cuya mínima escala es $\SI{0.01}{\cm}$ y se obtiene la cantidad de $\SI{12.49}{\cm}$.
+\\
+\bigskip
+\pause
+Se tienen cuatro cifras: $1, 2, 4, 9$ como en el vernier se pueden leer las centésimas de centímetro, implícitamente se está considerando un intervalo de incertidumbre:
+\[ [12.485, 12.495] \]
+\end{frame}
+\begin{frame}
+\frametitle{Observación}
+Si la mínima escala del vernier fuera de:
+\[ \SI{0.05}{\mm} = \SI{0.005}{\cm} \]
+el dato del ejemplo anterior estaría mal expresado, ya que debería de reportarse como $\SI{12.490}{\cm}$
+\\
+\bigskip
+\pause
+De esta forma se indica que la medición había sido tomada con un instrumento que mide centésimas de milímetro.
+\end{frame}
+\subsection*{Casos especiales}
+\begin{frame}
+\frametitle{Cifras sin sentido}
+La medida $\SI{2047.63}{\kilogram}$ obtenida con una balanza de sensibilidad de $1/10$ g, tiene cinco cifras significativas: $2, 0, 4, 7, 6$.
+\\
+\bigskip
+\pause
+La última cifra $3$, que corresponde a una centésima de gramo, \textcolor{red}{no puede leerse} con esta balanza, por tanto, no tiene sentido.
+\end{frame}
+\begin{frame}
+\frametitle{Cifra apreciada}
+En ocasiones se presentará la siguiente situación:
+\\
+\bigskip
+La longitud está entre $\num{35}$ y $\SI{36}{\mm}$
+\begin{figure}
+    \centering
+    \includestandalone{./Figuras/Regla_01}
+\end{figure}
+\pause
+¿Cómo se reporta?
+\[ \mbox{¿} \SI{35.5+-0.5}{\mm} \mbox{?   ¿} \SI{36+-0.5}{\mm} \mbox{?} \]
+\end{frame}
+\begin{frame}
+\frametitle{Cifra apreciada}
+En estos casos se justifica apreciar una cifra más, con el objeto de centrar el intervalo de incertidumbre:
+\[ (35. \underline{5} \pm 0.5) \mbox{ mm} \]
+\pause
+Con esto aseguramos que la longitud está comprendida entre $35$ y $36$ mm. La cifra apreciada \underline{no es significativa}, se señala con el subrayado.
+\end{frame}
+\begin{frame}
+\frametitle{El punto decimal}
+Cuando tenemos que\[ \SI{3.714}{\meter} = \SI{37.14}{\dm} = \SI{371.4}{\cm} = \SI{3714}{\mm} \]
+\pause
+En todos los casos hay cuatro cifras significativas.
+\\
+\bigskip
+\pause
+La posición del punto decimal, es independiente del número de ellas.
+\end{frame}
+\begin{frame}
+\frametitle{El cero como cifra significativa}
+En los casos en que haya necesidad de hacer un cambio de unidades \emph{agregando ceros} a la derecha o a la izquierda, se tiene que
+\[ \SI{3.714}{\meter} = \SI{0.003714}{\kilo\meter} = \SI{3.714e-3}{\kilo\meter} \]
+\pause
+El número de cifras significativas sigue siendo cuatro, los ceros agregados no cuentan como tales.
+\end{frame}
+\begin{frame}
+\frametitle{Otro ejemplo de ceros}
+Si transformamos a micras
+\[ \SI{3.714}{\meter} = \SI{371400}{\micro\meter} = \SI{3.714e4}{\micro\meter}  \]
+El número de cifras significativas, sigue siendo cuatro.
+\\
+\bigskip
+\pause
+Agragando ceros a la derecha o a la izquierda (usar potencias de $10$) no afecta a las cifras signficativas.
+\end{frame}
+\end{document}
