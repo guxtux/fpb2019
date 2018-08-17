@@ -1,0 +1,53 @@
+\documentclass{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{tikz}
+\usetikzlibrary{mindmap}
+\begin{document}
+%\pagestyle{empty}
+{\centering
+  {%
+    \begin{tikzpicture}
+      [mindmap,
+      grow cyclic,
+      every node/.style=concept,
+      concept color=teal!40,
+      level 1/.append style={sibling angle=360/7},
+      level 2/.append style={sibling angle=37.5},
+      ]
+      \node [root concept] {\huge{Física}}
+        child [concept color=purple!40]{
+          node    {\Large{Óptica}}
+          child [font=\normalsize, text width=2cm, rotate=-5] { node    {Geométrica} }
+          child [font=\normalsize] { node    {Física} }
+          child [font=\normalsize] { node    {Cuántica} }
+        }
+        child [concept color=pink!40, rotate=-10]{
+          node     {\Large{Física Moderna}}
+          child { node  [font=\normalsize, rotate=-10, text width=2cm]  {Relatividad} }
+          child { node  [font=\normalsize]  {Mecánica Cuántica} }
+        }
+        child [concept color=green!40, rotate=-25, text width=2.5cm]{
+          node  {\Large{Mecánica clásica}}
+        }
+        child [concept color=red!40, rotate=-10, text width=3.5cm, level distance=6cm]{
+          node  {\Large{Combinaciones}}[counterclockwise from=-115]
+          child [level distance=4cm]{ node [font=\normalsize] {Física Médica} }
+          child [level distance=4cm] { node [font=\normalsize] {Biofísica} }
+          child [level distance=4cm] { node  [font=\normalsize] {Geofísica} }
+          child [level distance=4cm] { node [font=\normalsize, text width=2cm] {Física matemática} }
+          child [level distance=4cm] { node [font=\normalsize] {Física molecular} }
+          child [level distance=4cm] { node [font=\normalsize, text width=2cm] {Física de partículas} }
+          child [level distance=4cm] { node [font=\normalsize, text width=2cm] {Astrofísica} }
+        }
+        child [concept color=blue!40, rotate=2]{
+          node     {\Large{Física nuclear}}
+        }
+        child [concept color=yellow!40, rotate=-5, text width=3cm]{
+          node   {\Large{Electro-magnetismo}}%[clockwise from=45, level distance=8cm]
+        }
+        child [concept color=violet!40, rotate=-5,text width=2.5cm] {
+          node {\Large{Termo-dinámica}}
+        };
+  \end{tikzpicture}}\par}
+\end{document}

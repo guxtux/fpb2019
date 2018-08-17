@@ -1,0 +1,32 @@
+\documentclass{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{tikz}
+\usetikzlibrary{mindmap,trees}
+\begin{document}
+\fontsize{14}{14}\selectfont
+\pagestyle{empty}
+\begin{tikzpicture}
+    \path[mindmap,concept color=black,text=white]
+    node[concept] {Física}
+    [clockwise from=0]
+    child[concept color=green!50!black] {
+        node[concept] {Óptica}
+        [clockwise from=90]
+        child { node[concept] {Geométrica} }
+        child { node[concept] {Física} }
+        child { node[concept] {Cuántica} }
+    }  
+    child[concept color=blue] {
+        node[concept] {Física Moderna}
+        [clockwise from=-30]
+        child { node[concept] {Relatividad} }
+        child { node[concept] {Mecánica cuántica} }
+    }
+    child[concept color=red] { node[concept] {Mecánica clásica} }
+    child[concept color=pink!75!black] { node[concept] {Geofísica} }
+    child[concept color=orange] { node[concept] {Física nuclear}} 
+    child[concept color=yellow] { node[concept] {\textcolor{black}{Electro \\ magnetismo}} }
+    child[concept color=cyan] { node[concept] {Astrofísica}} ;
+\end{tikzpicture}
+\end{document}
