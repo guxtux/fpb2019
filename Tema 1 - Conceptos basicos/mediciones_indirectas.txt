@@ -1,0 +1,138 @@
+section{Propagación de incertidumbres
+subsection{Mediciones indirectas
+Una medición indirecta es aquella que se obtiene como resultado de operaciones realizadas con dos o más mediciones directas..
+
+Por ejemplo, medir el volumen de agua contenido en un vaso sin graduación, lo obtendríamos midiendo el radio del interior del vaso (suponiendo que fuera circular) y la altura del nivel del agua.
+
+subsection{Propagación de incertidumbres.
+Cuando se realizan operaciones artiméticas con valores experimentales, el resultadosiempre tiene un incertidumbre.
+
+Veremos la manera en que se obtiene la incertidumbre con  esas operaciones artiméticas.
+
+Suma
+Si una magnitud es el resultado de la adición de otras dos
+Z = X + Y
+donde
+
+X = X_0 pm delta X
+Y = Y_0 pm delta Y
+
+entonces
+Z = (X_0 pm delta X) + (Y_0 pm delta Y)
+Z = (X_0  + Y_0) pm (delta X + delta Y)
+Z = Z_0 pm delta Z
+
+Ejemplo
+Al medir el largo de una msa con una regla de 30 cm graduada en mm, se obtuvo 78 cm.
+
+¿Es correcto?
+
+NO, el resultado debe de calcularse así:
+
+X_1 = SI 30.0+-0.05 cm
+X_2 = SI 30.0+-0.05 cm
+X_3 = SI 30.0+-0.05 cm
+
+Z_0 = 30.0 + 30.0 + 30.0 = SI 78.0 cm
+delta Z = 0.05 + 0.05 + 0.05 = SI 0.5 cm
+
+delta Z es la incertidumbre absoluta de Z, entonces
+
+Z = (78.0+-0.15) cm
+
+Resta
+
+Si Z = X- Y
+
+El valor máximo de Z es
+
+Z + delta Z = (X_0 + delta X) - (Y_0 - delta Y) =
+(X_0 - Y_0) + (delta X + delta Y)
+
+El valor minimo de Z es
+
+Z - delta Z = (X_0 - delta X) - (Y_0 + delta Y) =
+(X_0 - Y_0) - (delta X + delta Y)
+
+Entonces
+
+Z = Z_0 pm delta Z = (X_0 - Y_0) pm (delta X + delta Y)
+
+Multiplicación
+
+Si Z = a cdot b
+
+donde a y b son cantidades medidas directamente y por lo tanto
+
+a = a_0 pm delta a
+b = b_0 pm delta b
+
+entonces
+
+Z = (a_0 cdot delta a) cdot (b_0 pm delta b)
+
+desarrollando paso a paso el producto de binomios se tiene que
+
+Z = a_0 cdot b_0 pm a_0 delta b  pm b_0 delta a pm (delta a)(delta b)
+
+el último término por ser producto de incertidumbres, es de magntiud despreciable en comparación a los demás y se despecia, así pues
+
+Z = a_0 cdot b_0 pm (a_0 delta b + b_0 delta a)
+
+La incertidumbre relativa de Z se calcula con delta Z y Z_0
+
+delta_r Z = dfrac delta Z Z_0 = dfrac a_0 delta b + b0 delta a  a_0 b_0 = dfrac delta b b_0 + dfrac delta a a_0
+
+División
+
+Si Z = dfrac P Q = Z_0 pm delta Z
+
+donde P = P_0 pm delta P
+
+y Q = Q_0 pm delta Q
+
+entonces Z = dfrac P_0 pm delta P  Q_0 pm delta Q = Z_0 pm delta Z
+
+De todas las combinaciones posibles con los signos se puede determinar el valor máximo de Z o sea Z pm delta Z, que estará dado al dividir el valor máximo de P entre el valor mínimo de Q, así
+
+Z_0 + delta Z = dfrac P_0 + delta P  Q_0 - delta Q
+label eq:ecuacion_01
+
+y el valor mínimo de Z será el cociente del valor mínimo de P entre el máximo de Q , es decir
+
+Z_0 - delta Z = dfrac P_0 - delta P  Q_0 + delta Q
+label eq:ecuacion_02
+
+y restado miembro a miembro la ec. 2 de la 1, se tiene para el lado izquierdo de la igualdad
+
+(Z_0 + delta Z) - (Z_0 - delta Z) = 2 delta Z
+
+y para el lado derecho de la igualdad
+
+dfrac P_0 + delta P  Q_0 - delta Q - dfrac P_0 - delta P Q_0 + delta Q = dfrac (Q_0 + delta Q)(P_0 +delta P) - (Q_0 - delta Q)(P_0 - delta P)  (Q_0 - delta Q)(Q_0 + delta )
+
+por tanto
+
+2 delta Z = dfrac Q_ P_0 + Q_0 delta P + P_0 delta Q + delta Q delta P - [Q_0 P_0 - Q_0 delta P - P_0 delta Q + delta Q delta P  Q_02 - (delta Q)2
+
+sumando términos semejantes y suprimiendo (delta Q)2 por ser despreciables frente a Q_02
+
+2 delta Z = dfrac 2 (P_0 delta Q + Q_0 delta P) Q_02
+
+entonces
+
+delta Z = dfrac P_0 delta Q + Q_0 delta P Q_02
+
+Potenciacion
+
+Por lo visto en la multiplicación, se tiene que
+
+T = T_0 pm delta T
+
+T2 = (T_0 pm delta T)2 = (T_0 pm delta T)(T_0 dpm delta T)
+
+T2 = T_02 pm 2 T_0 delta T pm delta T2
+
+entonces
+
+T2 = T_02 pm 2 T_0 delta T

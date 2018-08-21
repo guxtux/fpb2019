@@ -293,7 +293,7 @@ De esta forma se indica que la medición había sido tomada con un instrumento q
 \subsection*{Casos especiales}
 \begin{frame}
 \frametitle{Cifras sin sentido}
-La medida $\SI{2047.63}{\kilogram}$ obtenida con una balanza de sensibilidad de $1/10$ g, tiene cinco cifras significativas: $2, 0, 4, 7, 6$.
+La medida $\SI{2047.63}{\gram}$ obtenida con una balanza de sensibilidad de $1/10$ g, tiene cinco cifras significativas: $2, 0, 4, 7, 6$.
 \\
 \bigskip
 \pause
@@ -346,5 +346,233 @@ El número de cifras significativas, sigue siendo cuatro.
 \bigskip
 \pause
 Agragando ceros a la derecha o a la izquierda (usar potencias de $10$) no afecta a las cifras signficativas.
+\end{frame}
+\section{Propagación de incertidumbres}
+\frame{\tableofcontents[currentsection, hideothersubsections]}
+\subsection{Mediciones indirectas}
+\begin{frame}
+\frametitle{Mediciones indirectas}
+Una medición indirecta es aquella que se obtiene como resultado de operaciones realizadas con dos o más mediciones directas.
+\\
+\bigskip
+\pause
+Por ejemplo, medir el volumen de agua contenido en un vaso sin graduación, lo obtendríamos midiendo el radio del interior del vaso (suponiendo que fuera circular) y la altura del nivel del agua.
+\end{frame}
+\subsection{Propagación de incertidumbres}
+\begin{frame}
+\frametitle{Mediciones indirectas}
+Cuando se realizan operaciones artiméticas con valores experimentales, el resultado siempre tiene un incertidumbre.
+\\
+\bigskip
+\pause
+Veremos la manera en que se obtiene la incertidumbre con  esas operaciones artiméticas.
+\end{frame}
+\subsection*{Suma}
+\begin{frame}
+\frametitle{Suma}
+Si una magnitud es el resultado de la adición de otras dos
+\[ Z = X + Y \]
+\pause
+donde
+\begin{align*}
+X &= X_{0} \pm \delta \: X \\
+Y &= Y_{0} \pm \delta \: Y
+\end{align*}
+\pause
+entonces
+\begin{align*}
+Z &= (X_{0} \pm \delta \: X) + (Y_{0} \pm \delta \: Y) \\
+Z &= (X_{0} + Y_{0}) \pm (\delta \: X + \delta \: Y) \\
+Z &= Z_{0} \pm \delta \: Z
+\end{align*}
+\end{frame}
+\begin{frame}
+\frametitle{Ejemplo}
+Al medir el largo de una mesa con una regla de $\SI{30}{\cm}$ graduada en $\SI{}{\mm}$, se obtuvo $\SI{78}{\cm}$.
+\\
+\bigskip
+\pause
+¿Es correcto?
+\\
+\bigskip
+\pause
+\textcolor{red}{NO}, el resultado debe de calcularse como sigue:
+\begin{align*}
+X_{1} &= \SI{30.0+-0.05}{\cm} \\
+X_{2} &= \SI{30.0+-0.05}{\cm} \\
+X_{3} &= \SI{18.0+-0.05}{\cm}
+\end{align*}
+\end{frame}
+\begin{frame}
+\frametitle{Ejemplo}
+\begin{align*}
+Z_{0} &= 30.0 + 30.0 + 18.0 = \SI{78.0}{\cm} \\
+\delta \: Z &= 0.05 + 0.05 + 0.05 = \SI{0.15}{\cm}
+\end{align*}
+\pause
+$\delta \: Z$ es la incertidumbre absoluta de $Z$, entonces
+\[ Z = (\num{78.0+-0.15}) \mbox{ cm} \]
+\end{frame}
+\subsection*{Resta} 		
+\begin{frame}
+\frametitle{Resta}
+Si
+\[ Z = X- Y \]
+\pause
+El valor máximo de $Z$ es
+\begin{align*}
+Z + \delta \:Z &= (X_{0} + \delta \: X) - (Y_{0} - \delta \: Y) = \\
+&= (X_{0} - Y_{0}) + (\delta \: X + \delta \: Y)
+\end{align*}
+\pause
+El valor mínimo de $Z$ es
+\begin{align*}
+Z - \delta \: Z &= (X_{0} - \delta \: X) - (Y_{0} + \delta \: Y) = \\
+&= (X_{0} - Y_{0}) - (\delta \: X + \delta \: Y)
+\end{align*}
+\end{frame}
+\begin{frame}
+\frametitle{Resta}
+Entonces
+\begin{align*}
+Z = Z_{0} \pm \delta \: Z = (X_{0} - Y_{0}) \pm (\delta \: X + \delta \: Y)
+\end{align*}
+\end{frame}
+\subsection*{Multiplicación}
+\begin{frame}
+\frametitle{Multiplicación}
+Si tenemos el producto
+\[ Z = a \cdot b \]
+donde $a$ y $b$ son cantidades medidas directamente y por lo tanto
+\pause
+\begin{align*}
+a &= a_{0} \pm \delta \: a \\
+b &= b_{0} \pm \delta \: b
+\end{align*}
+entonces
+\[ Z = (a_{0} \pm \delta \: a) \cdot (b_{0} \pm \delta \: b) \]
+\end{frame}
+\begin{frame}
+\frametitle{Multiplicación}
+Desarrollando paso a paso el producto de binomios se tiene que
+ \[ Z = a_{0} \cdot b_{0} \pm a_{0} \: \delta \: b  \pm b_{0} \: \delta \: a \pm (\delta \: a)(\delta \: b) \]
+el último término por ser producto de incertidumbres, es de magntiud despreciable en comparación a los demás y se despecia, así pues
+\end{frame}
+\begin{frame}
+\frametitle{Multiplicación}
+\[ Z = a_{0} \cdot b_{0} \pm (a_{0} \: \delta \: b + b_{0} \: \delta \: a) \]
+\pause
+La incertidumbre relativa de $Z$ se calcula con $\delta \: Z$ y $Z_{0}$
+\[	\delta_{r} \: Z = \dfrac{\delta\: Z}{Z_{0}} = \dfrac{a_{0} \delta \: b + b_{0} \: \delta \: a}{a_{0} \: b_{0}} = \dfrac{\delta \: b}{b_{0}} + \dfrac{\delta \: a}{a_{0}} \]
+\end{frame}
+\subsection*{División}
+\begin{frame}
+\frametitle{División}
+Si tenemos el cociente
+\[ Z = \dfrac{P}{Q} = Z_{0} \pm \delta \: Z \]
+donde
+\begin{align*}
+P &= P_{0} \pm \delta \: P \\
+Q &= Q_{0} \pm \delta \: Q
+\end{align*}
+\pause
+entonces
+\[ Z = \dfrac{P_{0} \pm \delta \: P}{Q_{0} \pm \delta \: Q} = Z_{0} \pm \delta \: Z \]
+\end{frame}
+\begin{frame}
+\frametitle{División}
+De todas las combinaciones posibles con los signos se puede determinar el valor máximo de $Z$ o sea $Z \pm \delta \: Z$, que estará dado al dividir el valor máximo de $P$ entre el valor mínimo de $Q$, así
+\begin{equation}
+Z_{0} + \delta \: Z = \dfrac{P_{0} + \delta \: P}{Q_{0} - \delta \: Q}
+\label{eq:ecuacion_01}
+\end{equation}
+\end{frame}
+\begin{frame}
+\frametitle{División}
+ El valor mínimo de $Z$ será el cociente del valor mínimo de $P$ entre el máximo de $Q$, es decir
+\begin{equation}
+Z_{0} - \delta \: Z = \dfrac{P_{0} - \delta \: P}{Q_{0} + \delta \: Q}
+\label{eq:ecuacion_02}
+\end{equation}
+\end{frame}
+\begin{frame}
+\frametitle{División}
+Restado miembro a miembro la ec. ($\ref{eq:ecuacion_02}$) de la ec. (\ref{eq:ecuacion_01}), se tiene para el lado izquierdo de la igualdad
+\[ (Z_{0} + \delta \: Z) - (Z_{0} - \delta \: Z) = 2 \: \delta \: Z \]
+\end{frame}
+\begin{frame}
+\frametitle{División}
+Para el lado derecho de la igualdad
+\begin{align*}
+\dfrac{P_{0} + \delta \: P}{Q_{0} - \delta \: Q} &= \dfrac{(Q_{0} + \delta \: Q)(P_{0} + \delta \: P)}{(Q_{0} - \delta \: Q)(Q_{0} + \delta \: Q)} + \\
+-& \dfrac{(Q_{0} - \delta \: Q)(P_{0} - \delta \: P)}{(Q_{0} - \delta \: Q)(Q_{0} + \delta \: Q)}
+\end{align*}
+\end{frame}
+\begin{frame}
+\frametitle{División}
+Por tanto
+\begin{align*}
+2 \: \delta \: Z = &{} \dfrac{Q_{0} \: P_{0} + Q_{0} \: \delta \: P + P_{0} \: \delta \: Q + \delta \: Q \: \delta \: P}{Q_{0}^{2} - (\delta \: Q)^{2}} + \\
+-& \dfrac{[Q_{0} \: P_{0} - Q_{0} \: \delta \: P - P_{0} \: \delta \: Q + \delta \: Q \: \delta \: P]}{Q_{0}^{2} - (\delta \: Q)^{2}}
+\end{align*}
+sumando términos semejantes y suprimiendo $(\delta \: Q)^{2}$ por ser despreciables frente a $Q_{0}^{2}$:
+\end{frame}
+\begin{frame}
+\frametitle{División}
+Tenemos que:
+\[ 2 \: \delta \: Z = \dfrac{2 \: (P_{0} \: \delta \: Q + Q_{0} \: \delta \: P)}{Q_{0}^{2}} \]
+entonces
+\[ \delta \: Z = \dfrac{P_{0} \: \delta \: Q + Q_{0} \: \delta \: P}{Q_{0}^{2}} \]
+\end{frame}
+\subsection*{Potenciacion}
+\begin{frame}
+\frametitle{Potenciación}
+Por lo visto en la multiplicación, se tiene que
+\[ T = T_{0} \pm \delta \: T \]
+si elevamos al cuadrado
+\[ T^{2} = (T_{0} \pm \delta \: T)^{2} = (T_{0} \pm \delta \: T)(T_{0} \pm \delta \: T) \]
+\end{frame}
+\begin{frame}
+\frametitle{Potenciación}
+Tenemos entonces
+\[ T^{2} = T_{0}^{2} \pm 2 \: T_{0} \: \delta \: T \pm (\delta \: T)^{2} \]
+\pause
+El último término se espera sea pequeño, por lo que al elevarlo al cuadrado, se vuelve más pequeño, resulta ser que
+\[ T^{2} = T_{0}^{2} \pm 2 \: T_{0} \: \delta \: T \]
+\end{frame}
+\begin{frame}
+\frametitle{Incertidumbre relativa de la potencia}
+Haciendo el cálculo para la incertidumbre relativa de la potenciación, tenemos que
+\[ \delta_{r} (T^{2}) = \dfrac{2 \: T_{0} \: \delta T}{T_{0}^{2}} = 2 \: \dfrac{\delta \: T}{T_{0}} \]
+\end{frame}
+\begin{frame}
+\frametitle{Incertidumbre para potencias mayores}
+Para una potencia cúbica:
+\[ T^{3} = T^{2} \cdot T = (T_{0}^{2} \pm 2 \: T_{0} \: \delta \: T)(T_{0} \pm \delta \: T) \]
+\pause
+Entonces al desarrollar
+\[ T^{3} =  T_{0}^{3} \pm T_{0}^{2} \: \delta \: T \pm 2 \: T_{0}^{2} \: \delta \: T \pm \cancel{2 \: T_{0} \: (\delta \: T)^{2}} \]
+\pause
+El último término se desprecia por se pequeño en comparación de los otros
+\[ T^{3} = T_{0}^{3} \pm 3 \: T_{0} \: \delta \: T \]
+\end{frame}
+\begin{frame}
+\frametitle{Regla general para las potencias}
+\begin{tabular}{l c l}
+$T^{2} = T_{0}^{2} \pm 2 \: T_{0} \: \delta \: T$ & y la & $\delta_{r} (T^{2}) = 2 \: \dfrac{\delta \: T}{T_{0}}$ \\[1em]
+$T^{3} =T_{0}^{3} \pm 3 \: T_{0} \: \delta \: T$ 
+ & y la & $\delta_{r} (T^{3}) = 3 \: \dfrac{\delta \: T}{T_{0}}$ \\[1em]
+ $T^{4} =T_{0}^{4} \pm 4 \: T_{0} \: \delta \: T$ 
+& y la & $\delta_{r} (T^{4}) = 4 \: \dfrac{\delta \: T}{T_{0}}$ \\[1em]
+\end{tabular}
+Podemos obtener una expresión general para las potencias:
+\end{frame}
+\begin{frame}
+\frametitle{Regla general para las potencias}
+La regla general quedaría expresada por:
+\[ T^{n} = T_{0}^{n} \pm \vert n \vert \: T_{0}^{n-1} \: \delta \: T \]
+la incertidumbre relativa asociada es
+\[ \delta_{r} (T^{n}) = \vert n \vert \: \dfrac{\delta \: T}{T_{0}} \]
+Para toda potencia de $n$ pudiendo ser positiva, negativa o fraccionaria.
 \end{frame}
 \end{document}
